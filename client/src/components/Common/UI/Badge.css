@@ -1,0 +1,71 @@
+/* Badge Component Styles - Status Pills */
+.status-pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.3;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+}
+
+.status-pill-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Success: Approved, Available, Paid, Active */
+.status-pill-badge.variant-success {
+  background-color: var(--color-success-subtle);
+  border: 1px solid var(--color-success-border);
+  color: var(--color-success-text);
+}
+.status-pill-badge.variant-success .status-pill-dot {
+  background-color: var(--color-success);
+}
+
+/* Warning / Accent: Pending, Waitlisted, Due Soon */
+.status-pill-badge.variant-warning {
+  background-color: var(--color-accent-subtle);
+  border: 1px solid var(--color-accent-border);
+  color: var(--color-accent-text);
+}
+.status-pill-badge.variant-warning .status-pill-dot {
+  background-color: var(--color-accent);
+}
+
+/* Danger: Overdue, Rejected, Unpaid, Suspended, Out of stock */
+.status-pill-badge.variant-danger {
+  background-color: var(--color-danger-subtle);
+  border: 1px solid var(--color-danger-border);
+  color: var(--color-danger-text);
+}
+.status-pill-badge.variant-danger .status-pill-dot {
+  background-color: var(--color-danger);
+}
+
+/* Info: Returned, Issued, In Review */
+.status-pill-badge.variant-info {
+  background-color: var(--color-info-subtle);
+  border: 1px solid var(--color-info-border);
+  color: var(--color-info-text);
+}
+.status-pill-badge.variant-info .status-pill-dot {
+  background-color: var(--color-info);
+}
+
+/* Neutral: General / Inactive */
+.status-pill-badge.variant-neutral {
+  background-color: var(--color-surface-muted);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+}
+.status-pill-badge.variant-neutral .status-pill-dot {
+  background-color: var(--color-text-muted);
+}

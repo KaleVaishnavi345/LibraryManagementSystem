@@ -1,0 +1,50 @@
+/* SegmentedControl Component Styles */
+.segmented-control-track {
+  display: flex;
+  align-items: center;
+  background-color: var(--color-surface-muted);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  padding: 4px;
+  position: relative;
+  user-select: none;
+}
+
+.segmented-control-track.full-width {
+  width: 100%;
+}
+
+.segmented-control-option {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border: none;
+  background: transparent;
+  color: var(--color-text-muted);
+  font-family: inherit;
+  font-size: 13.5px;
+  font-weight: 600;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+  outline: none;
+  white-space: nowrap;
+}
+
+.segmented-control-option:hover:not(.active) {
+  color: var(--color-text);
+}
+
+.segmented-control-option.active {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  box-shadow: var(--shadow-active);
+}
+
+.segmented-control-icon {
+  font-size: 14px;
+  line-height: 1;
+}

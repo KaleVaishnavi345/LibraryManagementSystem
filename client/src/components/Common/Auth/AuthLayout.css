@@ -1,0 +1,180 @@
+/* ==========================================================================
+   AuthLayout Styles - Two-Panel Split Shell matching Reference Design
+   ========================================================================== */
+
+.auth-layout-wrapper {
+  min-height: 100vh;
+  background-color: var(--color-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 16px;
+  font-family: var(--font-family);
+}
+
+.auth-layout-card {
+  width: 100%;
+  max-width: 960px;
+  background-color: var(--color-surface);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  overflow: hidden;
+  border: 1px solid rgba(27, 42, 74, 0.06);
+}
+
+/* Left Brand Panel */
+.auth-info-panel {
+  width: 440px;
+  background-color: var(--color-primary);
+  color: var(--color-primary-text);
+  padding: 48px 40px;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.auth-brand-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 36px;
+}
+
+/* Rounded app icon with layered colors */
+.auth-app-icon {
+  width: 42px;
+  height: 42px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.auth-icon-layers {
+  width: 24px;
+  height: 24px;
+  position: relative;
+}
+
+.layer-box {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+}
+
+.layer-1 {
+  background: #10B981; /* Green */
+  top: 0;
+  left: 0;
+}
+
+.layer-2 {
+  background: #3B82F6; /* Blue */
+  top: 4px;
+  left: 4px;
+  opacity: 0.9;
+}
+
+.layer-3 {
+  background: #F43F5E; /* Pink/Red */
+  bottom: 0;
+  right: 0;
+  opacity: 0.85;
+}
+
+.auth-brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-brand-name {
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--color-primary-text);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.auth-brand-tagline {
+  font-size: 12px;
+  color: var(--color-text-on-dark);
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+.auth-info-heading {
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--color-primary-text);
+  margin: 0 0 16px 0;
+  letter-spacing: -0.02em;
+}
+
+.auth-info-desc {
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--color-text-on-dark);
+  margin: 0 0 36px 0;
+}
+
+/* Benefits list */
+.auth-benefits-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: auto;
+}
+
+.auth-benefit-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 14px;
+  color: var(--color-text-on-dark);
+  font-weight: 500;
+}
+
+.auth-benefit-icon {
+  font-size: 18px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+/* Right Content Panel */
+.auth-content-panel {
+  flex: 1;
+  background-color: var(--color-surface);
+  padding: 44px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+
+/* Responsive: stack on mobile (< 768px) */
+@media (max-width: 768px) {
+  .auth-layout-card {
+    flex-direction: column;
+    max-width: 480px;
+  }
+
+  .auth-info-panel {
+    width: 100%;
+    padding: 36px 28px;
+  }
+
+  .auth-info-heading {
+    font-size: 24px;
+  }
+
+  .auth-content-panel {
+    padding: 32px 24px;
+  }
+}

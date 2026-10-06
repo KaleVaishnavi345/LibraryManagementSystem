@@ -1,0 +1,137 @@
+.library-requests-page {
+  min-height: 100vh;
+  background-color: #F3F5F4;
+  color: #1B1F23;
+  padding-bottom: 60px;
+}
+
+.library-requests-container {
+  max-width: 1080px;
+  margin: 32px auto;
+  padding: 0 20px;
+}
+
+.layout-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+/* Request Form Card */
+.request-form-card {
+  background: #FFFFFF;
+  border-radius: 8px;
+  border: 1px solid #D8DEE4;
+  box-shadow: 0 1px 3px rgba(27, 31, 35, 0.08);
+  padding: 28px;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1B1F23;
+  margin-bottom: 6px;
+}
+
+.form-control {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 14px;
+  font-size: 14px;
+  border: 1px solid #D8DEE4;
+  border-radius: 4px;
+  background-color: #FAFBFB;
+  color: #1B1F23;
+  font-family: inherit;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #17403A;
+  box-shadow: 0 0 0 3px rgba(23, 64, 58, 0.15);
+  background-color: #FFFFFF;
+}
+
+.form-help {
+  font-size: 12px;
+  color: #57606A;
+  margin-top: 4px;
+}
+
+/* History List Card */
+.history-section-card {
+  background: #FFFFFF;
+  border-radius: 8px;
+  border: 1px solid #D8DEE4;
+  box-shadow: 0 1px 3px rgba(27, 31, 35, 0.08);
+  padding: 24px;
+}
+
+.history-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.history-item {
+  border: 1px solid #EAEAEA;
+  border-radius: 6px;
+  padding: 16px;
+  background-color: #FAFBFB;
+}
+
+.history-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+}
+
+.history-item-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #17403A;
+  margin: 0;
+}
+
+.history-item-desc {
+  font-size: 13px;
+  color: #24292F;
+  line-height: 1.5;
+  margin: 6px 0 10px 0;
+}
+
+.admin-response-box {
+  background-color: #F8FAF9;
+  border-left: 3px solid #17403A;
+  padding: 10px 12px;
+  border-radius: 4px;
+  font-size: 13px;
+  color: #17403A;
+  margin-top: 10px;
+}
+
+.admin-response-title {
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 3px;
+  display: block;
+}
+
+@media (max-width: 860px) {
+  .layout-two-col {
+    grid-template-columns: 1fr;
+  }
+}

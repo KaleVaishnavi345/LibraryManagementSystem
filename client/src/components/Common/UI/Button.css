@@ -1,0 +1,105 @@
+/* Button Component Styles - Pill-shaped buttons */
+.btn-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: var(--radius-pill);
+  padding: 12px 24px;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+  outline: none;
+  text-decoration: none;
+  white-space: nowrap;
+  user-select: none;
+}
+
+/* Width options */
+.btn-pill.full-width {
+  width: 100%;
+}
+
+/* Primary Variant: Solid Navy Pill */
+.btn-pill.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-primary-text);
+  border-color: var(--color-primary);
+}
+
+.btn-pill.btn-primary:hover:not(:disabled) {
+  background-color: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+  box-shadow: var(--shadow-button);
+}
+
+/* Secondary Variant: Outline Pill */
+.btn-pill.btn-secondary {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  border-color: var(--color-border);
+}
+
+.btn-pill.btn-secondary:hover:not(:disabled) {
+  background-color: var(--color-surface-hover);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+/* Danger Variant: Muted Red Pill */
+.btn-pill.btn-danger {
+  background-color: var(--color-danger);
+  color: #FFFFFF;
+  border-color: var(--color-danger);
+}
+
+.btn-pill.btn-danger:hover:not(:disabled) {
+  background-color: var(--color-danger-hover);
+  border-color: var(--color-danger-hover);
+  box-shadow: 0 4px 12px rgba(217, 56, 58, 0.25);
+}
+
+/* Sizes */
+.btn-pill.btn-sm {
+  padding: 8px 16px;
+  font-size: 12.5px;
+}
+
+.btn-pill.btn-lg {
+  padding: 14px 28px;
+  font-size: 15.5px;
+}
+
+/* Disabled & Loading */
+.btn-pill:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  box-shadow: none !important;
+}
+
+.btn-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: currentColor;
+  border-radius: 50%;
+  animation: btn-spin 0.8s linear infinite;
+}
+
+@keyframes btn-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.btn-arrow {
+  transition: transform 0.15s ease;
+  font-weight: 700;
+}
+
+.btn-pill:hover .btn-arrow {
+  transform: translateX(3px);
+}

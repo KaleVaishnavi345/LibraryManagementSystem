@@ -1,0 +1,257 @@
+.issued-books-page {
+  min-height: 100vh;
+  background-color: #F3F5F4;
+  color: #1B1F23;
+  padding-bottom: 60px;
+}
+
+.issued-books-container {
+  max-width: 1200px;
+  margin: 32px auto;
+  padding: 0 20px;
+}
+
+.page-header {
+  margin-bottom: 28px;
+}
+
+.page-title {
+  font-family: Georgia, serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #17403A;
+  margin-bottom: 8px;
+}
+
+.page-subtitle {
+  font-size: 14px;
+  color: #57606A;
+  margin: 0;
+}
+
+/* KPI Summary Cards */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.kpi-card {
+  background: #FFFFFF;
+  border-radius: 8px;
+  padding: 20px 24px;
+  box-shadow: 0 1px 3px rgba(27, 31, 35, 0.08), 0 0 0 1px #D8DEE4;
+  display: flex;
+  flex-direction: column;
+}
+
+.kpi-label {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #57606A;
+  margin-bottom: 8px;
+}
+
+.kpi-value {
+  font-size: 30px;
+  font-weight: 700;
+  color: #17403A;
+  line-height: 1.1;
+}
+
+.kpi-subtext {
+  font-size: 12px;
+  color: #57606A;
+  margin-top: 6px;
+}
+
+.kpi-card.alert {
+  border-left: 4px solid #8C2F39;
+}
+
+.kpi-card.alert .kpi-value {
+  color: #8C2F39;
+}
+
+.kpi-card.warning {
+  border-left: 4px solid #B08A3E;
+}
+
+.kpi-card.warning .kpi-value {
+  color: #B08A3E;
+}
+
+/* Section Card */
+.content-section {
+  background: #FFFFFF;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(27, 31, 35, 0.08), 0 0 0 1px #D8DEE4;
+  overflow: hidden;
+  margin-bottom: 32px;
+}
+
+.section-header {
+  padding: 18px 24px;
+  border-bottom: 1px solid #D8DEE4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #FAFBFB;
+}
+
+.section-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #17403A;
+  margin: 0;
+}
+
+/* Books List / Table */
+.books-table-wrapper {
+  overflow-x: auto;
+}
+
+.books-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 14px;
+}
+
+.books-table th {
+  background-color: #FAFBFB;
+  color: #57606A;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 12px 20px;
+  border-bottom: 1px solid #D8DEE4;
+}
+
+.books-table td {
+  padding: 16px 20px;
+  border-bottom: 1px solid #EAEAEA;
+  vertical-align: middle;
+}
+
+.books-table tr:last-child td {
+  border-bottom: none;
+}
+
+.books-table tr:hover {
+  background-color: #F8FAF9;
+}
+
+.book-title-cell {
+  font-weight: 600;
+  color: #1B1F23;
+  margin-bottom: 2px;
+}
+
+.book-meta-sub {
+  font-size: 12px;
+  color: #57606A;
+}
+
+/* Badges */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.status-badge.on-time {
+  background-color: #EBF2F0;
+  color: #17403A;
+}
+
+.status-badge.due-soon {
+  background-color: #FBF6EC;
+  color: #8A6A1E;
+}
+
+.status-badge.overdue {
+  background-color: #FDF2F3;
+  color: #8C2F39;
+}
+
+.status-badge.pending {
+  background-color: #FBF6EC;
+  color: #B08A3E;
+}
+
+.status-badge.settled {
+  background-color: #EBF2F0;
+  color: #17403A;
+}
+
+/* Action Buttons */
+.action-btn {
+  background-color: #17403A;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.action-btn:hover {
+  background-color: #235850;
+}
+
+.action-btn:focus-visible {
+  outline: 2px solid #17403A;
+  outline-offset: 2px;
+}
+
+.action-btn.secondary {
+  background-color: transparent;
+  color: #17403A;
+  border: 1px solid #17403A;
+}
+
+.action-btn.secondary:hover {
+  background-color: #EBF2F0;
+}
+
+.action-btn:disabled {
+  background-color: #E4E8E6;
+  color: #8C969F;
+  border-color: #D8DEE4;
+  cursor: not-allowed;
+}
+
+/* Notice box */
+.fine-policy-notice {
+  background-color: #FBF6EC;
+  border-left: 4px solid #B08A3E;
+  padding: 14px 18px;
+  border-radius: 4px;
+  font-size: 13px;
+  color: #5D430C;
+  line-height: 1.5;
+  margin-top: 24px;
+}
+
+@media (max-width: 768px) {
+  .issued-books-container {
+    margin: 20px auto;
+    padding: 0 14px;
+  }
+
+  .kpi-grid {
+    grid-template-columns: 1fr;
+  }
+}
