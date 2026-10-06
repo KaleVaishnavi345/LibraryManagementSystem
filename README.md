@@ -1,115 +1,283 @@
-# 📚 Full-Stack Library Management System (MERN Stack)
+# 📚 Library Management System
 
-A comprehensive, enterprise-grade **Library Management System** built using **MongoDB, Express.js, React, and Node.js (MERN Stack)**. This system features a multi-role architecture supporting both **Member 1 (Student Portal)** and **Member 2 (Librarian & Admin Portal)** with real-time stock tracking, automated overdue fine calculation, notification alerts, and fine receipt generation.
+A full-stack **Library Management System** developed using the **MERN Stack (MongoDB, Express.js, React.js, Node.js)**.
 
----
-
-## 🌟 Key System Features
-
-### 🎓 Member 1: Student Portal Features (Phases 1 – 10)
-- **🔐 Secure Authentication & JWT Authorization**: Multi-role registration & login with 6-digit OTP verification (displayed in server console) and protected session tokens.
-- **🔍 Advanced Book Search & Filters**: Live keyword search across Title, Author, ISBN, Book ID, and Category filters (*Computer Science, Mathematics, English, etc.*).
-- **🛒 Shopping Cart & Issue Requests**: Add multiple books to cart or issue single books with real-time stock checks.
-- **📋 Request Status Tracking**: Track issue request statuses (*Pending, Approved, Rejected*) with status badges.
-- **📖 My Issued Books & Due Dates**: View active checked-out physical books with 14-day due date countdowns.
-- **💳 Overdue Fine Summary**: Real-time breakdown of overdue fines calculated at **₹10 per day late**.
-- **🔔 Real-time Notification Center**: Receive in-app student notifications for request approvals, rejections, due date reminders, and fine receipts (handled within the application).
-- **📝 Search Missing Books & Complaints**: Request uncataloged titles or submit missing book complaints directly to the librarian.
-- **⏳ Automated Waitlist Management**: Automatic queue assignment for out-of-stock books with notification alerts when stock becomes available.
+The system provides separate **Student** and **Librarian/Admin** portals for managing books, requests, transactions, fines, notifications, and student accounts.
 
 ---
 
-### 🛡️ Member 2: Librarian & Admin Portal Features (Phases 11 – 18)
-- **📊 Executive Analytics Dashboard**: Real-time KPI metrics for total catalog books, registered students, active issued books, pending requests, pending complaints, total fines collected, and unpaid overdue fines.
-- **📚 Book Inventory Management (Full CRUD)**: Add, edit, update stock levels (`totalCopies`, `availableCopies`), and delete catalog books.
-- **📋 Issue Request Approval & Rejection Workflow**: Review pending student requests, approve or reject with custom reasons, and trigger automated student notifications.
-- **📖 Physical Counter Checkout**: Hand over physical copies at the library counter, assign 14-day return due dates, and decrement shelf stock.
-- **📥 Return Processing & Automated Overdue Fine Engine**: Accept book returns, automatically compute late fines (**₹10/day**), and restore shelf stock.
-- **💳 Fine Payment Settlement & Digital Receipts**: Mark fines as `Paid`, record librarian auditor ID, and generate digital payment receipts (`Receipt No: F-PAID-XXXXXX`).
-- **🎓 Student Directory & Account Controls**: Manage student records formatted as **`Surname FirstName`** (`Sharma Rahul`, `Patel Priya`, `Deshmukh Vaishnavi`), view active activity metrics, and toggle account suspension (`isActive`).
+## 👥 Project Team
+
+### Member 1 — Student Portal
+- Student registration & login
+- JWT authentication
+- 6-digit OTP verification
+- Book search & filtering
+- Cart
+- Book issue requests
+- Request status
+- Issued books & due dates
+- Fine calculation
+- Student notifications
+- Missing book requests/complaints
+- Waitlist
+
+### Member 2 — Librarian & Admin Portal
+- Admin authentication
+- Analytics dashboard
+- Book inventory CRUD
+- Request approval/rejection
+- Student notifications
+- Physical checkout
+- Book return
+- Fine management
+- Fine payment & receipts
+- Student directory
+- Student account management
+
+### Member 3 — Frontend, UI/UX & Modifications
+- Student & Admin dashboards
+- Login, registration & OTP UI
+- Book, cart & request interfaces
+- Notification interface
+- Responsive design
+- Frontend-backend API integration
+- Form validation & error handling
+- UI/UX improvements
+- Frontend bug fixes
+- Required modifications and updates
 
 ---
 
-## 🗄️ Database Architecture (`Final Database Design.pdf` Aligned)
+# 🚀 Main Features
 
-| Collection | Key Attributes | Purpose |
-| :--- | :--- | :--- |
-| **`Users`** | `studentId`, `name` (`Surname FirstName`), `email`, `password`, `role`, `phone`, `department`, `isActive`, `createdAt` | Authentication, multi-role access & directory management |
-| **`Books`** | `bookId`, `title`, `author`, `category`, `isbn`, `publisher`, `year`, `totalCopies`, `availableCopies`, `description`, `img`, `quantity`, `borrowed` | Catalog inventory & physical shelf stock tracking |
-| **`Transactions`** | `userId`, `bookId`, `user`, `book`, `requestDate`, `requestStatus`, `issueDate`, `dueDate`, `returnDate`, `status`, `fineAmount`, `fineStatus`, `finePaidDate`, `adminVerifiedBy` | Book issues, physical checkouts, returns & fine ledgers |
-| **`Notifications`** | `userId`, `title`, `message`, `type`, `isRead`, `createdAt` | Student notification inbox alerts |
-| **`LibraryRequests`** | `userId`, `bookTitle`, `author`, `publisher`, `category`, `description`, `requestType`, `status` | Missing book requests & student complaints |
-| **`WaitingLists`** | `userId`, `bookId`, `position`, `status` | Out-of-stock book waitlist queue |
+### Student Portal
+- Registration & OTP verification
+- Login
+- Search/filter books
+- Cart
+- Book requests
+- Request status
+- Issued books & due dates
+- ₹10/day overdue fine
+- Notifications
+- Missing book requests
+- Waitlist
+
+### Admin/Librarian Portal
+- Dashboard & analytics
+- Book inventory management
+- Approve/reject requests
+- Book checkout and return
+- Fine management
+- Fine payment & receipts
+- Student management
+- Send student notifications
 
 ---
 
-## 🔑 Default Demo Credentials
+# 🔔 Notifications
 
-### 🛡️ Administrator Account
-- **Email**: `admin@library.com`
-- **Password**: `admin123`
-- *Or click `🔑 Fill Admin Credentials` on the login page.*
+Admins can send notifications to individual students.
 
-### 🎓 Student Demo Account
-- **Email**: `vaishnavi123@gmail.com`
-- **Password**: `password123`
-- *Or click `🔑 Fill Student Credentials` on the login page.*
+The notification is stored in **MongoDB** and displayed in the student's notification center.
 
----
+For development, the backend also displays:
 
-## 🚀 Installation & Setup Guide
-
-### 1. Prerequisites
-- **Node.js** (v18 or higher)
-- **MongoDB** (Running locally on `mongodb://127.0.0.1:27017/library_management_db` or MongoDB Atlas URI)
-
-### 2. Clone Repository
-```bash
-git clone https://github.com/yourusername/library-management-system.git
-cd library-management-system
+```text
+========================================
+      STUDENT NOTIFICATION SENT
+========================================
+Student : Test Student
+Email   : teststudent@gmail.com
+Subject : Book Request Update
+Message : Your book request has been approved.
+Status  : Notification sent to student account
+========================================
 ```
 
-### 3. Server Configuration & Setup
+> This is a console simulation and does not send an actual email.
+
+---
+
+# 🔐 Authentication & OTP
+
+The system uses:
+
+- JWT authentication
+- bcrypt password hashing
+- Role-based authorization
+- 6-digit OTP verification
+
+OTP validity: **10 minutes**
+
+For development, the OTP is displayed in the backend console instead of being sent through email.
+
+Public registration always creates a **student account**. Admin accounts are managed separately.
+
+---
+
+# 🗂️ Database
+
+**MongoDB** is used as the database.
+
+Main collections:
+
+```text
+Users
+Books
+Transactions
+Notifications
+LibraryRequests
+WaitingLists
+```
+
+---
+
+# 🛠️ Technology Stack
+
+**Frontend:** React.js, JavaScript, HTML, CSS
+
+**Backend:** Node.js, Express.js, REST APIs
+
+**Database:** MongoDB, Mongoose
+
+**Authentication:** JWT, bcrypt, OTP
+
+**Tools:** Git, GitHub, VS Code, MongoDB Atlas/Community Server
+
+---
+
+# 📋 Prerequisites
+
+Install the following before running the project:
+
+- **Node.js 18+**
+- **npm**
+- **MongoDB / MongoDB Atlas**
+- **Git**
+- **VS Code** or any code editor
+- **Modern web browser**
+
+Project dependencies can be installed using:
+
 ```bash
-cd server
 npm install
 ```
 
-Create a `.env` file inside the `server/` directory:
-```env
-PORT=8080
-MONGO_URI=mongodb://127.0.0.1:27017/library_management_db
-JWT_SECRET=your_jwt_secret_key_here
+---
+
+# ⚙️ Setup
+
+### 1. Clone Repository
+
+```bash
+git clone <repository-url>
+cd Library-Management-System
 ```
 
-Start backend server:
+### 2. Backend
+
 ```bash
+cd backend
+npm install
 npm start
 ```
-*(Backend runs on `http://localhost:8080`)*
 
-### 4. Client Setup & Development Server
-Open a new terminal tab:
+Backend:
+
+```text
+http://localhost:8080
+```
+
+### 3. Frontend
+
+Open another terminal:
+
 ```bash
-cd client
+cd frontend
 npm install
 npm run dev
 ```
-*(Frontend runs on `http://localhost:5173`)*
+
+Frontend:
+
+```text
+http://localhost:5173
+```
+
+### Environment Variables
+
+Create `.env` in the backend:
+
+```env
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret
+PORT=8080
+```
+
+> Do not upload `.env` or passwords/secrets to GitHub.
 
 ---
 
-## 🧪 Testing & Verification
+# 🔑 Demo Credentials
 
-- **Production Client Build Test**:
-  ```bash
-  cd client
-  npm run build
-  ```
-  *(Compiles cleanly with zero errors)*
+### Admin
+
+```text
+Email    : admin@library.com
+Password : admin123
+```
+
+### Student
+
+```text
+Email    : vaishnavi123@gmail.com
+Password : password123
+```
 
 ---
 
-## 📜 License
+# 📁 Project Structure
 
-This project is licensed under the **MIT License**.
+```text
+Library-Management-System/
+│
+├── backend/
+│   ├── controllers/
+│   ├── middleware/
+│   ├── models/
+│   ├── routes/
+│   ├── uploads/
+│   └── index.js
+│
+├── frontend/
+│   ├── src/
+│   └── package.json
+│
+└── README.md
+```
+
+---
+
+# 👥 Responsibility Summary
+
+| Member | Responsibility |
+|---|---|
+| **Member 1** | Student Portal & Student Features |
+| **Member 2** | Librarian/Admin Portal & Management |
+| **Member 3** | Frontend, UI/UX, Integration & Modifications |
+
+---
+
+# 📄 License / Usage
+
+This project is developed as a **college academic project**.
+
+It uses open-source technologies and packages whose respective licenses and terms apply. The project is intended primarily for **educational purposes**.
+
+---
+
+# 🎯 Objective
+
+The objective of this project is to provide a centralized web-based platform for managing library operations digitally, reducing manual work and improving interaction between students and library administrators.
